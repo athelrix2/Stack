@@ -3,6 +3,21 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 
 public class Tester extends JFrame{
+	
+	private Window win;
+	
+	public Tester(){
+		win=new Window();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(500,500);
+		add(win);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args){
+		new Tester();
+	}
+	
 	/*public static void main(String[] args){
 		StackLL stck = new StackLL( );
 		System.out.println( stck.size( ) ); //0 
@@ -57,15 +72,4 @@ public class Tester extends JFrame{
 		in.close();
 		System.out.println(stack.peek());
 	}*/
-	private Window win;
-	public Tester(){
-		win=new Window();
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(500,500);
-		add(win);
-		setVisible(true);
-	}
-	public static void main(String[] args){
-		new Tester();
-	}
 }

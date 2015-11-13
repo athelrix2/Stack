@@ -19,6 +19,8 @@ public class Window extends JPanel implements ActionListener{
 	private JLabel lab;
 	
 	public Window(){
+		//All your GUI components
+		
 		lab=new JLabel("answer");
 		
 		stack=new StackLL();
@@ -39,12 +41,19 @@ public class Window extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		in=new Scanner(text.getText());
 		in.useDelimiter(",");
 		String s;
 		Double a,b;
+		
+		//Logic for rpn math using a stack
 		while(in.hasNext()){
+			
+			//get the next number or symbol
 			s=in.next();
+			
+			//Process the number || symbol
 			if(s.equals("/")){
 				b=stack.pop();
 				a=stack.pop();
@@ -74,7 +83,9 @@ public class Window extends JPanel implements ActionListener{
 				}	
 			}
 		}
+		//close the scanner to keep the program for sucking up system resources
 		in.close();
+		//print answer
 		lab.setText("Answer: "+Double.toString(stack.pop()));
 	}
 }

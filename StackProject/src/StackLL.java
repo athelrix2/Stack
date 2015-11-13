@@ -2,17 +2,21 @@ import java.util.LinkedList;
 
 public class StackLL implements StackIntrfc {
 	
-	private LinkedList<Double> ll= new LinkedList<Double>();
+	private LinkedList<Double> ll;
+	
+	public StackLL(){
+		ll= new LinkedList<Double>();
+	}
 	
 	@Override
 	public void push(double d) {
-		// TODO Auto-generated method stub
+		//place d on top of the stack
 		ll.addFirst(d);
 	}
 
 	@Override
 	public double pop() {
-		// TODO Auto-generated method stub
+		//return top item in the stack and then remove from stack 
 		double x=ll.getFirst();
 		ll.removeFirst();
 		return x;
@@ -20,24 +24,21 @@ public class StackLL implements StackIntrfc {
 
 	@Override
 	public double peek() {
-		// TODO Auto-generated method stub
+		//return the top item in the stack and leave the stack intact 
 		return ll.getFirst();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
+		//returns the size (depth) of the stack
 		return ll.size();
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		//remove all items from the stack
 		while(!ll.isEmpty()){
 			ll.removeFirst();
 		}
 	}
-
-
-
 }
